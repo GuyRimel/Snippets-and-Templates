@@ -2,13 +2,15 @@
 -- CRUD IS ReD in SQL
 
 -- INSERT SYNTAX --
---   INSERT INTO table_name(column1, column2, …) VALUES(value1, value2, …);
+
+-- INSERT INTO table_name(column1, column2, …) VALUES(value1, value2, …);
 
 INSERT INTO Genres(Name, Description) VALUES ('Thriller', 'Thriller film, also known as suspense film or suspense thriller, is a broad film genre that involves excitement and suspense in the audience.');
 
 
 -- SELECT SYNTAX --
---   SELECT col1,col2,col3 FROM [table name]
+
+-- SELECT col1,col2,col3 FROM [table name]
 
 SELECT Title, Description FROM Movies;
 
@@ -29,4 +31,71 @@ SELECT Title, Description, DirectorID
   FROM Movies
   WHERE GenreID = 1 AND DirectorID = 1;
 
-  
+
+-- UPDATE SNTAX --
+
+-- UPDATE table
+--   SET column1 = value1,
+--     column2 = value2 ,...
+--   WHERE
+--     Condition;
+
+UPDATE Genres
+  SET Description='Thriller film, also known as suspense film or suspense thriller, is a broad film genre that involves excitement and suspense in the audience. Tension is created by delaying what the audience sees as inevitable, and is built through situations that are menacing or where escape seems impossible.'
+  WHERE GenreID = 1;
+
+-- DELETE SYNTAX
+
+-- DELETE FROM table
+--   WHERE condition;
+
+-- note: this is dangerous. it would delete all records meeting the WHERE condition FOVEREVER PERMANENTLY
+-- be sure to backup the DB!!!
+DELETE FROM Movies
+  WHERE GenreID = 1;
+
+---------------------------------------------------------------------------------------------------
+
+INSERT INTO movies(title, description, DirectorID, GenreID, imageURL, featured)
+  VALUES('Blazing Saddles', 'In order to ruin a western town, a corrupt politician appoints a black Sheriff, who promptly becomes his most formidable adversary. (imdb)', 1, 1, 'https://www.imdb.com/title/tt0071230/mediaviewer/rm2174508800/?ref_=tt_ov_i', False);
+
+INSERT INTO movies(title, description, DirectorID, GenreID, imageURL, featured)
+  VALUES('Young Frankenstein', 'An American grandson of the infamous scientist, struggling to prove that his grandfather was not as insane as people believe, is invited to Transylvania, where he discovers the process that reanimates a dead body. (imdb)', 1, 1, 'https://www.imdb.com/title/tt0072431/mediaviewer/rm1617677312/?ref_=tt_ov_i', False);
+
+INSERT INTO movies(title, description, DirectorID, GenreID, imageURL, featured)
+  VALUES('The Producers', 'After putting together another Broadway flop, down-on-his-luck producer Max Bialystock teams up with timid accountant Leo Bloom in a get-rich-quick scheme to put on the world''s worst show. (imdb)', 1, 1, 'https://www.imdb.com/title/tt0395251/mediaviewer/rm772250880/?ref_=tt_ov_i', False);
+
+INSERT INTO movies(title, description, DirectorID, GenreID, imageURL, featured)
+  VALUES('The Notebook', 'A poor yet passionate young man (Ryan Gosling) falls in love with a rich young woman (Rachel McAdams), giving her a sense of freedom, but they are soon separated because of their social differences. (imdb)', 2, 2, 'https://www.imdb.com/title/tt0332280/mediaviewer/rm1153669376/?ref_=tt_ov_i', False);
+
+INSERT INTO movies(title, description, DirectorID, GenreID, imageURL, featured)
+  VALUES('The Princess Bride', 'While home sick in bed, a young boy''s grandfather reads him the story of a farmboy-turned-pirate who encounters numerous obstacles, enemies and allies in his quest to be reunited with his true love. (imdb)', 4, 4, 'https://www.imdb.com/title/tt0093779/mediaviewer/rm3845855233/?ref_=tt_ov_i', True);
+
+INSERT INTO movies(title, description, DirectorID, GenreID, imageURL, featured)
+  VALUES('Stand by Me', 'After the death of one of his friends, a writer recounts a childhood journey with his friends to find the body of a missing boy. (imdb)', 4, 4, 'https://www.imdb.com/title/tt0092005/mediaviewer/rm3808838912/?ref_=tt_ov_i', False);
+
+INSERT INTO movies(title, description, DirectorID, GenreID, imageURL, featured)
+  VALUES('Monsters, Inc.', 'In order to power the city, monsters have to scare children so that they scream. However, the children are toxic to the monsters, and after a child gets through, two monsters realize things may not be what they think. (imdb)', 5, 5, 'https://www.imdb.com/title/tt0198781/mediaviewer/rm2785401856/?ref_=tt_ov_i', False);
+
+INSERT INTO movies(title, description, DirectorID, GenreID, imageURL, featured)
+  VALUES('Up', '78-year-old Carl Fredricksen travels to Paradise Falls in his house equipped with balloons, inadvertently taking a young stowaway. (imdb)', 5, 5, 'https://www.imdb.com/title/tt1049413/mediaviewer/rm2582959360/?ref_=tt_ov_i', False);
+
+INSERT INTO movies(title, description, DirectorID, GenreID, imageURL, featured)
+  VALUES('Inside Out', 'After young Riley is uprooted from her Midwest life and moved to San Francisco, her emotions - Joy, Fear, Anger, Disgust and Sadness - conflict on how best to navigate a new city, house, and school. (imdb)', 5, 5, 'https://www.imdb.com/title/tt2096673/mediaviewer/rm3662344960/?ref_=tt_ov_i', False);
+
+INSERT INTO movies(title, description, DirectorID, GenreID, imageURL, featured)
+  VALUES('Soul', 'After landing the gig of a lifetime, a New York jazz pianist suddenly finds himself trapped in a strange land between Earth and the afterlife. (imdb)', 5, 5, 'https://www.imdb.com/title/tt2948372/mediaviewer/rm4113422337/?ref_=tt_ov_i', False);
+
+INSERT INTO Directors(name, bio, Birthyear, deathyear)
+  VALUES('Pete Docter', 'Pete Docter is the Oscar®-winning director of "Monsters, Inc.," "Up," and "Inside Out," and Chief Creative Officer at Pixar Animation Studios. He is currently directing Pixar''s feature film "Soul" with producer Dana Murray, which is set to release June 19, 2020.
+
+Starting at Pixar in 1990 as the studio''s third animator, Docter collaborated and help develop the story and characters for "Toy Story," Pixar''s first full-length animated feature film, for which he also was supervising animator. He served as a storyboard artist on "A Bug''s Life," and wrote initial story treatments for both "Toy Story 2" and "WALL.E." Aside from directing his three films, Docter also executive produced "Monsters University" and the Academy Award®-winning "Brave."', '1968-10-09', NULL);
+
+INSERT INTO users_movies(UserID, MovieID)
+  VALUES(1, 19);
+
+INSERT INTO users_movies(UserID, MovieID)
+  VALUES(2, 21);
+
+INSERT INTO users_movies(UserID, MovieID)
+  VALUES(3, 15);
