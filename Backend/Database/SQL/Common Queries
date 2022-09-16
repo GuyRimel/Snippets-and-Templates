@@ -1,0 +1,32 @@
+-- the CRUD of SQL: INSERT (Create), SELECT (Read), UPDATE (Update), DELETE (Delete)...
+-- CRUD IS ReD in SQL
+
+-- INSERT SYNTAX --
+--   INSERT INTO table_name(column1, column2, …) VALUES(value1, value2, …);
+
+INSERT INTO Genres(Name, Description) VALUES ('Thriller', 'Thriller film, also known as suspense film or suspense thriller, is a broad film genre that involves excitement and suspense in the audience.');
+
+
+-- SELECT SYNTAX --
+--   SELECT col1,col2,col3 FROM [table name]
+
+SELECT Title, Description FROM Movies;
+
+SELECT * FROM Movies;
+
+-- WHERE SYNTAX --
+--   SELECT column_1, column_2 … column_n
+--     FROM table_name
+--     WHERE conditions;
+
+SELECT *
+  FROM Movies
+  WHERE Title = 'Silence of the Lambs';
+
+-- AND combines multiple conditions
+
+SELECT Title, Description, DirectorID
+  FROM Movies
+  WHERE GenreID = 1 AND DirectorID = 1;
+
+  
