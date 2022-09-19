@@ -1,0 +1,80 @@
+// MongoDB uses a "non-relational" database approach which is more flexible
+// instead of SQL which uses "tables" with "primary/foreign keys"
+// NR databases use "collections" of "documents"
+
+// Here are some basic CRUD operations with Mongo (shell):
+
+
+// CREATE //////////
+// db.createCollection("collectionName") // a "collection" is like a folder, a "document" is like a ... file in a folder. (which are JSobjects)
+// db.collectionName.insertOne(document_being_inserted)
+// note: declare a variable that is a JS or JSON object, then add the variable name into the ...insertOne(varName) method
+
+
+// READ ////////////
+// db.movies.find() // this finds all documents in the "movies" collection
+
+// finding the first movie that meets a condition:
+// db.movies.findOne( { _id: ObjectId("5c3bd189515a081b363cb7e4") } )
+
+
+// UPDATE //////////
+// $set is super important! otherwise this would overwrite the entire document with just a "description"
+// db.[Collection Name].update( [Condition for which records to update], [Update to make] )
+// db.movies.update(
+//   { _id: ObjectId("5c3bd189515a081b363cb7e4") },
+//   { $set: { Description: "A young FBI cadet must receive the help of an incarcerated and manipulative cannibal killer." } }
+// )
+
+// or add a NEW object to the object with $push:
+// db.[collectionName].update(
+//   [condition of which items to update],
+//   { $push: { name of key to add value to end of array] : [value to add to end of array ] } }
+// )
+
+// db.users.update(
+//   { Username: "Lilly" },
+//   { $push: { FavoriteMovies: ObjectId("5c3bd189515a081b363cb7e4") } }
+// )
+
+
+// DELETE //////////
+// db.[collectionName].deleteOne( [condition] )
+// db.[collectionName].deleteMany([condition])
+// db.movies.deleteMany({ "Genre.Name": "Comedy" }) // would delete all documents with a genre.name of "Comedy"
+
+
+
+var movie1 = {
+  Title: 'Up',
+  Description: '78-year-old Carl Fredricksen travels to Paradise Falls in his house equipped with balloons, inadvertently taking a young stowaway.',
+  Genre: {
+    Name: 'Animation',
+    Description: 'Animation uses multiple sequential frames of artwork to simulate a moving scene. It is often associated with cartoons or 3D animations created with CGI.'
+  },
+  Director: {
+    Name: 'Pete Docter',
+    Bio: "Pete Docter started at Pixar in 1990 as the studio's third animator. He helped develop the story and characters for 'Toy Story', Pixar's first full-length animated feature film. He was also involved with 'A Bug's Life', 'Toy Story 2', 'WALL.E', 'Brave', 'Up', 'Soul' among others.",
+    Birth: '1968',
+    Death: null
+  },
+  ImagePath: 'https://www.imdb.com/title/tt1049413/mediaviewer/rm2582959360/?ref_=tt_ov_i',
+  Featured: true
+}
+
+var movie2 = {
+  Title: 'Up',
+  Description: '78-year-old Carl Fredricksen travels to Paradise Falls in his house equipped with balloons, inadvertently taking a young stowaway.',
+  Genre: {
+    Name: 'Animation',
+    Description: 'Animation uses multiple sequential frames of artwork to simulate a moving scene. It is often associated with cartoons or 3D animations created with CGI.'
+  },
+  Director: {
+    Name: 'Pete Docter',
+    Bio: "Pete Docter started at Pixar in 1990 as the studio's third animator. He helped develop the story and characters for 'Toy Story', Pixar's first full-length animated feature film. He was also involved with 'A Bug's Life', 'Toy Story 2', 'WALL.E', 'Brave', 'Up', 'Soul' among others.",
+    Birth: '1968',
+    Death: null
+  },
+  ImagePath: 'https://www.imdb.com/title/tt1049413/mediaviewer/rm2582959360/?ref_=tt_ov_i',
+  Featured: true
+}
