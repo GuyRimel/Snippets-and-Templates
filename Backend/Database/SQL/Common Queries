@@ -99,3 +99,4 @@ INSERT INTO users_movies(UserID, MovieID)
 
 INSERT INTO users_movies(UserID, MovieID)
   VALUES(3, 15);
+
