@@ -1,12 +1,13 @@
 // MongoDB uses a "non-relational" database approach which is more flexible
-// instead of SQL which uses "tables" with "primary/foreign keys"
-// NR databases use "collections" of "documents"
+// compared to SQL which uses "tables" with "primary/foreign keys"
+// Mongo (a Non Relational database) uses "collections" of "documents"
+// a "collection" is like a folder, a "document" is like a ... file in a folder. (which are actually JS/JSON objects)
 
-// Here are some basic CRUD operations with Mongo (shell):
+// Here are some basic CRUD operations with Mongo (CLI):
 
 
 // CREATE //////////
-// db.createCollection("collectionName") // a "collection" is like a folder, a "document" is like a ... file in a folder. (which are JSobjects)
+// db.createCollection("collectionName")
 // db.collectionName.insertOne(document_being_inserted)
 // note: declare a variable that is a JS or JSON object, then add the variable name into the ...insertOne(varName) method
 
