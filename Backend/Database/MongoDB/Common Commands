@@ -256,3 +256,20 @@ var user3 = {
   birthday: new Date('2019-03-01'),
   favoriteMovies: []
 };
+
+
+// EXPORTING WITH MONGO DB //////////
+// run this *outside of the Mongo Shell from the directory where you want the file to be exported
+// abbreviations for "db", "collection", and "out" are "-d", "-c", and "-o" respectively
+//CLI input: mongoexport --db=DNMovies --collection=users --out=DNMovies.users.json
+
+
+// IMPORTING WITH MONGO DB //////////
+// run this *outside of the Mongo Shell from the directory where the file is (being imported)
+// CLI input: mongoimport --db=DNMovies --collection=users --file=DNMovies.users.json
+
+// --mode=merge will skip duplicates (by id unless specified)
+//   mongoimport --db=DNMovies --colection=users --mode=merge --file=DNMovies.users.json
+
+// --mode=delete will replace duplicates (by id unless specified)
+// CLI input: mongoimport --db=DNMovies --colection=users --mode=delete --file=DNMovies.users.json
