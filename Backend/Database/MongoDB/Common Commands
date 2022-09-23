@@ -233,28 +233,36 @@ var movie11 = {
   Featured: false
 };
 
+[movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10, movie11]
+
 var user1 = {
-  name: "Ash Rimel",
-  username: "prettyOboe94",
-  password: "whitegurldancing123",
-  birthday: new Date('1994-04-08'),
-  favoriteMovies: []
+  Username: "prettyOboe94",
+  Password: "whitegurldancing123",
+  Birthday: new Date('1994-04-08'),
+  FavoriteMovies: [
+    ObjectId("632b1ef7b5abd92c23c8577b"),
+    ObjectId("632b1ef7b5abd92c23c8577c")
+  ]
 };
 
 var user2 = {
-  name: "Pokey Rimel",
-  username: "stinku",
-  password: "scaredofnoises123",
-  birthday: new Date('2019-06-01'),
-  favoriteMovies: []
+  Username: "stinku",
+  Password: "scaredofnoises123",
+  Birthday: new Date('2019-06-01'),
+  FavoriteMovies: [
+    ObjectId("632b1ef7b5abd92c23c85772"),
+    ObjectId("632b1ef7b5abd92c23c85773")
+  ]
 };
 
 var user3 = {
-  name: "Miles Rimel",
-  username: "quesoCat",
-  password: "suckles123",
-  birthday: new Date('2019-03-01'),
-  favoriteMovies: []
+  Username: "quesoCat",
+  Password: "suckles123",
+  Birthday: new Date('2019-03-01'),
+  FavoriteMovies: [
+    ObjectId("632b1ef7b5abd92c23c85777"),
+    ObjectId("632b1ef7b5abd92c23c85778")
+  ]
 };
 
 
