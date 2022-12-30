@@ -1,0 +1,38 @@
+:root {
+  --mango: hsl(30, 100%, 50%);
+  --apple: hsl(10, 100%, 50%);
+  --apple-dark: hsl(10, 100%, 30%);
+  --mango-dark: hsl(30, 100%, 30%);
+}
+
+body {
+  background: tan;
+}
+
+.fruit {
+  display: flex;
+  background-color: lightgreen;
+  width: 20vw;
+  height: 20vw;
+  border: 1px outset green;
+  border-radius: 10vw;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 .25em #0004;
+  margin: .25em;
+}
+
+.fruit-basket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: rgb(165, 124, 42);
+  padding: 1.25em;
+  border-radius: 10vw;
+}
+
+.mango { background-image: linear-gradient(var(--mango) 50%, var(--mango-dark)); }
+.apple { background-image: linear-gradient(var(--apple) 50%, var(--apple-dark)); }
+.spoiled-apple{ background-image: linear-gradient( gray, var(--apple-dark), #484848); color: white; }
+.spoiled-mango{ background-image: linear-gradient( gray, var(--mango-dark), #484848); color: white; }
