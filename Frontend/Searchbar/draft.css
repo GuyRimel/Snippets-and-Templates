@@ -1,0 +1,33 @@
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+
+input { font-size: 1rem; }
+
+.user-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: .35em;
+  margin-top: 1rem;
+}
+
+.card {
+  border: 1px solid #656565;
+  background-color: #f8f8f8;
+  padding: .5rem;
+}
+
+.card > .header {
+  margin-bottom: .35rem;
+}
+
+.card > .body {
+  font-size: .8rem;
+  color: #777;
+}
+
+.display-none {
+  display: none;
+}
